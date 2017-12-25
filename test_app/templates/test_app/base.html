@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">{{loadtstatic}}{% csrf_token %}
+<head>
+	<meta charset="UTF-8">
+	<title>Тестовое задание</title>
+</head>
+<body>
+<ul >
+	<li style="display: inline-block;"><a href="/">uploadText</a></li>
+	<li style="display: inline-block;"><a href="/getText">getText</a></li>
+	<li style="display: inline-block;"><a href=""></a></li>
+	<li style="display: inline-block;"><a href="/admin/">admin</a></li>
+</ul>
+{% block gettext %}{% endblock %}
+{% block uploadtext %}{% endblock %}
+{% block index %}{% endblock %}
+{% block success %}{% endblock %}
+	<script src="static/js/jquery.js"></script>
+{% block script %}{% endblock %}
+</body>
+</html>

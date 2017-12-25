@@ -1,0 +1,29 @@
+{% extends "test_app/base.html" %}
+{% block uploadtext %}
+<div>
+	<label for="txt_id"><textarea name="txt" id="txt_id" cols="30" rows="10" placeholder="введи текст для отправки"></textarea></label><br>
+	<button id="send_id">отправить</button>
+</div>
+{% endblock %}
+{% block script %}
+<script>
+	$(document).ready(function(){
+    function Success(){
+        window.location.replace('/success')
+        
+    }
+		$('#send_id').click(function(){
+			$.ajax({
+          		type:"POST",
+          		url:"/uploadText",
+          		data:{
+          			'txt':$('#txt_id').val(),
+            		'csrfmiddlewaretoken':$('input[name=csrfmiddlewaretoken]').val()
+          		},
+              success:Success,
+          		dataType:'html'
+          	});
+		});
+	});
+</script>
+{% endblock %}

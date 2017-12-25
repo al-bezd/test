@@ -1,0 +1,8 @@
+{% extends "test_app/base.html" %}
+{% block gettext %}
+<div>
+	{%for i in result%}
+    <p>{{i.upl_text}}</p><br>
+  {%endfor%}
+</div>
+{% endblock %}
